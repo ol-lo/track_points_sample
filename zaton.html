@@ -280,13 +280,12 @@
                 icon: "https://maps.google.com/mapfiles/ms/icons/red-dot.png",
                 position: latLng,
                 map: map
-            })
-
+            });
+            map.panTo( latLng );
+            map.setCenter(latLng);
         } else {
             devicePositionMarker.setPosition( latLng );
         }
-        map.panTo( latLng );
-        map.setCenter(latLng);
     }
 
     navigator.geolocation.getCurrentPosition(updateMarkerLocation, function () {
