@@ -290,12 +290,12 @@
 
         map.setCenter(latLng);
     }
-    //
-    // navigator.geolocation.getCurrentPosition(updateMarkerLocation, function () {
-    // });
-    //
-    // navigator.geolocation.watchPosition(updateMarkerLocation, function () {
-    // });
+
+    navigator.geolocation.getCurrentPosition(updateMarkerLocation, function () {
+    });
+
+    navigator.geolocation.watchPosition(updateMarkerLocation, function () {
+    });
 
 
     var imageBounds = {
