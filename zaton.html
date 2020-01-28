@@ -270,6 +270,7 @@
  var devicePositionMarker = null;
 
     function updateMarkerLocation(position) {
+        console.log('updaiting marker');
         var deviceCoords = {
             lat: position.coords.latitude,
             lng: position.coords.longitude
@@ -290,11 +291,9 @@
     }
 
     navigator.geolocation.getCurrentPosition(updateMarkerLocation, function () {
-        console.log('getCurrentPosition');
     });
 
     navigator.geolocation.watchPosition(updateMarkerLocation, function () {
-        console.log('watchPosition');
     });
 
 
