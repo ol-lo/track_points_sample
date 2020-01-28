@@ -281,17 +281,20 @@
                 position: latLng,
                 map: map
             });
-            map.panTo( latLng );
-            map.setCenter(latLng);
         } else {
             devicePositionMarker.setPosition( latLng );
         }
+
+        map.panTo(latLng);
+        map.setCenter(latLng);
     }
 
     navigator.geolocation.getCurrentPosition(updateMarkerLocation, function () {
+        console.log('getCurrentPosition');
     });
 
     navigator.geolocation.watchPosition(updateMarkerLocation, function () {
+        console.log('watchPosition');
     });
 
 
