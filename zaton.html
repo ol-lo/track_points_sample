@@ -283,6 +283,13 @@
                 position: latLng,
                 map: map
             });
+
+
+            devicePositionMarker.addListener('click', function() {
+                infowindow.setContent(deviceCoords.lat + ", " + deviceCoords.lng);
+                infowindow.open(map, this);
+            });
+
         } else {
             devicePositionMarker.setPosition( latLng );
         }
