@@ -249,17 +249,18 @@
 
     var infowindow = new google.maps.InfoWindow();
 
-    var marker, i;
+    // var marker, i;
 
     for (i = 0; i < locations.length; i++) {
         marker = new google.maps.Marker({
             icon: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png",
             position: new google.maps.LatLng(locations[i][0], locations[i][1]),
-            map: map
+            map: map,
+            label: locations[i][0] + ", " + locations[i][1]
         });
 
         marker.addListener('click', function() {
-            infowindow.setContent(locations[i][0] + ", " + locations[i][1]);
+            infowindow.setContent(this.getLabel());
             infowindow.open(map, marker);
         });
     }
