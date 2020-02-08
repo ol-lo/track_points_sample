@@ -256,11 +256,11 @@
             icon: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png",
             position: new google.maps.LatLng(locations[i][0], locations[i][1]),
             map: map,
-            label: locations[i][0] + ", " + locations[i][1]
+            // label: locations[i][0] + ", " + locations[i][1]
         });
-
+        marker.posTitle = locations[i][0] + ", " + locations[i][1];
         marker.addListener('click', function() {
-            infowindow.setContent(this.getLabel());
+            infowindow.setContent(this.posTitle);
             infowindow.open(map, marker);
         });
     }
